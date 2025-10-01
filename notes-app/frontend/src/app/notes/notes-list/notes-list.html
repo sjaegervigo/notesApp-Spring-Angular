@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Notes List</h1>
+  <button (click)="openNewNoteForm()">Create New Note</button>
+  <button (click)="getActiveNotesList()">Active</button>
+  <button (click)="getArchivedNotesList()">Archived</button>
+  <div class ="notes-list">
+    <div class="note" *ngFor="let note of notesList">
+      <h2>{{ note.title }}</h2>
+      <p>{{ note.content }}</p>
+      <button (click)="viewSelectedNote(note)">Open</button>
+      <div *ngIf="note.id">
+        <button (click)="archiveUnarchiveNote(note.id)">
+          {{ note.archived ? 'Unarchive' : 'Archive' }}
+        </button>
+        <button (click)="deleteNote(note.id)">Delete</button>
+      </div>
+    </div>
+</div>
+

@@ -1,0 +1,2 @@
+<app-notes-list *ngIf="!showForm" (createNote)="openForm()" (noteSelected)="openNote($event)"></app-notes-list>
+<app-notes-form *ngIf="showForm" [note]="selectedNote" [editModeOn]="editModeOn" (cancel)="backToNotesList()"></app-notes-form>
