@@ -1,108 +1,79 @@
-# 📝 Notes App
+NotesApp - Spring Boot & Angular
+Una aplicación web completa (Full-Stack) diseñada para la gestión de notas personales. Este proyecto demuestra la integración de un backend basado en microservicios/REST con un frontend moderno y reactivo.
 
-A simple full-stack web application to create, edit, and delete notes. It consists of a RESTful API built with Java Spring Boot and a frontend developed with Angular. The application uses PostgreSQL as the database.
+🚀 Características
+CRUD Completo: Crear, leer, actualizar y eliminar notas.
 
----
+Interfaz Responsiva: Diseño adaptado a diferentes dispositivos gracias a Bootstrap.
 
-## 📁 Project Structure
+API REST: Comunicación fluida entre el cliente y el servidor mediante JSON.
 
-```plaintext
-CHALLENGE.md
-README.md          # You're here
-notes-app/
-├── backend/       # Spring Boot REST API
-├── frontend/      # Angular SPA
-├── docker-compose.yml
-├── run.sh         # One-line script to run the entire stack
+Persistencia de Datos: Gestión eficiente de la base de datos mediante Spring Data JPA.
 
-```
+🛠️ Tecnologías Utilizadas
+Backend
+Java 17+
 
-## 🚀 How to Run the App
-Important: Make sure Docker and Docker Compose are installed and running.
+Spring Boot: Framework principal.
 
-Clone the repository
+Spring Data JPA: Para la capa de persistencia.
 
-```bash
-git clone https://github.com/your-org/notes-app.git
-cd notes-app
-```
+H2 Database / MySQL: (Dependiendo de tu configuración de application.properties).
 
-Grant execution permission to the script (only once)
+Maven: Gestor de dependencias.
 
-```bash
-chmod +x run.sh
-Start the app
-```
+Frontend
+Angular: Framework para la interfaz de usuario.
 
-```bash
-./run.sh
-The script will:
-```
+TypeScript: Lenguaje de programación.
 
-Build and start the backend, frontend, and database
+Bootstrap: Para el diseño y estilos CSS.
 
-Create the necessary database schema automatically
+Node.js & NPM: Entorno de ejecución y gestión de paquetes.
 
-📦 Technologies Used
+📋 Requisitos Previos
+Antes de empezar, asegúrate de tener instalado:
 
-To run this project correctly, make sure you have the following installed:
+JDK 17 o superior.
 
-### 🔹 Frontend (Angular)
-- **Node.js**: v20.19.0
-- **npm**: v10.8.2
-- **Angular CLI**: v17.3.7
+Node.js (versión 16 o superior).
 
-### 🔹 Backend (Spring Boot)
-- **Java**: OpenJDK 21.0.5 (compila con Java 17 configurado en `pom.xml`)
-- **Maven**: 3.9.9
-- **Spring Boot**: 3.5.0
-- **Database**: PostgreSQL (configurado como dependencia runtime)
+Angular CLI (npm install -g @angular/cli).
 
-### 🔹 Docker environment
-- **Docker**: v28+
-- **Docker Compose**: v2.34+
-- **OS**: Linux, macOS or Windows (with WSL2 or Docker Desktop)
+Maven.
 
+🔧 Instalación y Configuración
+1. Clonar el repositorio
+Bash
 
-## 🌐 Architecture Overview
-The app follows a Single Page Application (SPA) model.
+git clone https://github.com/sjaegervigo/notesApp-Spring-Angular.git
+cd notesApp-Spring-Angular
+2. Configurar el Backend
+Navega a la carpeta del backend (donde esté el archivo pom.xml).
 
-Frontend is fully decoupled and consumes the REST API provided by the backend.
+Ejecuta el comando para descargar dependencias y arrancar la aplicación:
 
-The backend follows a layered architecture:
+Bash
 
-Controller → Service → Repository
+mvn spring-boot:run
+El servidor estará disponible en: http://localhost:8080
 
-All services are containerized and orchestrated via docker-compose.
+3. Configurar el Frontend
+Abre una nueva terminal y navega a la carpeta del frontend.
 
-## 🧪 API Testing
-Once the app is running, the backend API is available at:
+Instala las dependencias:
 
-```bash
-http://localhost:8080/api/notes
-```
+Bash
 
-You can test it using:
-
-Postman
-
-curl
-
-Or directly from the frontend interface
-
-🛠️ Development
-If you prefer to run frontend and backend separately during development:
-
-```bash
-# Backend
-cd backend
-./mvnw spring-boot:run
-
-# Frontend
-cd frontend
 npm install
-ng serve
-```
+Inicia el servidor de desarrollo:
 
-🧾 License
-This project is for evaluation purposes and belongs to sjaegervigo.
+Bash
+
+ng serve
+La aplicación será accesible en: http://localhost:4200
+
+📁 Estructura del Proyecto
+/backend: Contiene la lógica de negocio, controladores REST y modelos de datos.
+
+/frontend: Contiene los componentes de Angular, servicios y estilos.
